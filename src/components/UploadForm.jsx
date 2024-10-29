@@ -26,6 +26,7 @@ function UploadForm() {
     try {
       const response = await api.post('/upload', formData);
       setDownloadUrl(`${api.defaults.baseURL}/download/${response.data.imageId}`);
+
       setErrorMessage(null);
     } catch (error) {
       setErrorMessage('Error uploading or resizing image');
